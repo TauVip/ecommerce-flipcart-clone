@@ -1,3 +1,7 @@
-export const api = 'http://localhost:2000/api'
-export const generatePublicUrl = fileName =>
-  `http://localhost:2000/public/${fileName}`
+const baseUrl =
+  window.location.hostname === 'localhost'
+    ? 'http://localhost:2000'
+    : 'https://flipcart-rest-server.herokuapp.com'
+
+export const api = `${baseUrl}/api`
+export const generatePublicUrl = fileName => `${baseUrl}/public/${fileName}`
